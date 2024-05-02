@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Telas</string>
+    <string name="login">Login</string>
+    <string name="message">Por favor faça um login para continuar</string>
+    <string name="email">Email</string>
+    <string name="password">Senha</string>
+    <string name="sing_in">Cadastro</string>
+    <string name="account">Você não possui uma senha?</string>
+    <string name="sing_up">Entrar</string>
+    <string name="create">Create a new account</string>
+    <string name="user">Username</string>
+    <string name="phone">Phone</string>
+    <string name="user">Username</string>
+    <string name="phone">Phone</string>
+    <string name="over">over 18?</string>
+    <string name="create_acc">Create account</string>
+    <string name="user">Username</string>
+</resources>

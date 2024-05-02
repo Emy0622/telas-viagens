@@ -26,11 +26,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import br.senai.sp.jandira.telas.R
 import br.senai.sp.jandira.telas.ui.theme.TelasTheme
 
 
@@ -57,8 +59,10 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
             .padding(top = 160.dp, start = 10.dp),
     ) {
 
+//Text(text = stringResource(id = R.string.contact_name))
+
         Text(
-            text = "Login",
+            text = stringResource(id = R.string.login),
             color = Color(0xffCF06F0),
             fontSize = 48.sp,
             // fontes
@@ -66,7 +70,7 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
         )
 
         Text(
-            text = "Please sign in to continue",
+            text = stringResource(id = R.string.message),
             color = Color(0xffA09C9C),
             fontSize = 21.sp
         )
@@ -127,7 +131,8 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                     .padding(top = 10.dp)
                     .size(width = 385.dp, height = 70.dp),
                 shape = RoundedCornerShape(10.dp),
-                label = { Text(text = "Password") },
+                label = {
+                    Text(text = stringResource(id = R.string.password))},
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Filled.Lock,
@@ -163,7 +168,7 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                         .padding(end = 8.dp),
                     fontWeight = FontWeight.ExtraBold,
                     fontSize = 18.sp,
-                    text = "SING IN"
+                    text = stringResource(id = R.string.sing_in)
                 )
 
                 // iconizinho de seta do lado do text no button
@@ -180,13 +185,13 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                 Text(
                     modifier = Modifier
                         .padding(end = 12.dp),
-                    color = Color(0xffA09C9C), text = "Don’t have an account?"
+                    color = Color(0xffA09C9C), text = stringResource(id = R.string.account)
                 )
                 Text(
                     modifier = Modifier.clickable { controladorDeNavegacao!!.navigate("cadastrar") },
                     color = Color(0xffCF06F0),
                     fontWeight = FontWeight.ExtraBold,
-                    text = "Sign up"
+                    text = stringResource(id = R.string.sing_up)
                 )
             }
         }
