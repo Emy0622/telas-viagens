@@ -52,14 +52,10 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                 .size(height = 40.dp, width = 120.dp)
         )
     }
-
-    // cria uma coluna grande no meio
     Column(
         modifier = Modifier
             .padding(top = 160.dp, start = 10.dp),
     ) {
-
-//Text(text = stringResource(id = R.string.contact_name))
 
         Text(
             text = stringResource(id = R.string.login),
@@ -75,14 +71,9 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
             fontSize = 21.sp
         )
 
-        //  nova column para alinhar os outlinedTextFields
         Column(
             modifier = Modifier
-                // tamanho
                 .size(height = 350.dp, width = 500.dp)
-
-
-                // margem personalizada para poder dar o espaçamento para cima e um pouquinho em baixo pra nao ficar grudado
                 .padding(top = 100.dp, end = 10.dp, start = 10.dp)
         ) {
 
@@ -97,19 +88,15 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                 },
                 modifier = Modifier
                     .size(width = 385.dp, height = 70.dp),
-                // borda redonda
                 shape = RoundedCornerShape(10.dp),
                 label = { Text(text = "E-mail") },
-                // acessar a biblioteca de icones do kotlin e usar um
                 leadingIcon = {
                     Icon(
-                        // icone para email
                         imageVector = Icons.Filled.Email,
                         contentDescription = "",
                         tint = Color(0xffCF06F0)
                     )
                 },
-                // cores inout
                 colors = OutlinedTextFieldDefaults.colors(
                     unfocusedBorderColor = Color(0xffCF06F0),
                     focusedLabelColor = Color(0xffCF06F0),
@@ -121,7 +108,6 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                 mutableStateOf("")
             }
 
-            // meesmo processo para todos os outros outlineds que vierem
             OutlinedTextField(
                 value = passwordState.value,
                 onValueChange = {
@@ -146,23 +132,18 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                     focusedBorderColor = Color(0xffCF06F0)
                 )
             )
-
-            // botao
             Button(modifier = Modifier
                 .padding(top = 4.dp)
-                // alinho onde o botao vai ficar: End, Center, Start, Top, Bottom
                 .align(Alignment.End)
                 .size(height = 65.dp, width = 160.dp)
                 .padding(10.dp),
                 shape = RoundedCornerShape(10.dp),
-                // acessando as configs personalizadas do button p deixar ele bonitinho
                 colors = ButtonDefaults.buttonColors(
-                    // container equivale a area do botao
                     containerColor = Color(0xffCF06F0)
                 ),
                 onClick = { /*TODO*/ }) {
 
-                // text dentro del button
+                // text dentro do butão
                 Text(
                     modifier = Modifier
                         .padding(end = 8.dp),
@@ -171,12 +152,11 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                     text = stringResource(id = R.string.sing_in)
                 )
 
-                // iconizinho de seta do lado do text no button
+                // icon de seta
                 Icon(
                     imageVector = Icons.Filled.ArrowForward, contentDescription = ""
                 )
             }
-            // tive que colocar essa row para por os dois texts lado a lado
             Row(
                 modifier = Modifier
                     .align(Alignment.End)
@@ -199,22 +179,16 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
 
     Box(
         modifier = Modifier
-            // box pai, largura da tela
             .fillMaxWidth()
-
-            // box, ficar da altura maxima
             .fillMaxHeight(),
-
-        // alinhamento de todos os itens(filhos) dele pro canto inferior esquerdo
         contentAlignment = Alignment.BottomStart
     ) {
         Box(
             modifier = Modifier
-
-                // define uma cor e ROUNDED CORNER SHAPE para o formato personalizado
                 .background(color = Color(0xffCF06F0), shape = RoundedCornerShape(topEnd = 14.8.dp))
                 .size(height = 40.dp, width = 120.dp)
         )
+
     }
 }
 

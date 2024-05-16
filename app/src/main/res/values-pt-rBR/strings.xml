@@ -8,12 +8,20 @@
     <string name="sing_in">Cadastro</string>
     <string name="account">Você não possui uma senha?</string>
     <string name="sing_up">Entrar</string>
-    <string name="create">Create a new account</string>
-    <string name="user">Username</string>
-    <string name="phone">Phone</string>
-    <string name="user">Username</string>
-    <string name="phone">Phone</string>
-    <string name="over">over 18?</string>
-    <string name="create_acc">Create account</string>
-    <string name="user">Username</string>
+    <string name="create">Criar uma nova conta</string>
+    <string name="user">Usuário</string>
+    <string name="phone">Telefone</string>
+    <string name="over">Maior de 18 anos?</string>
+    <string name="create_acc">Criar conta</string>
+    <string name="profile_picture">foto de perfil</string>
+    <string name="search">buscar</string>
+    <string name="you_paris">Você está em Paris</string>
+    <string name="my_trips">Minhas viagens</string>
+    <string name="Categories">Categorias</string>
+    <string name="Montain">Montanhas</string>
+    <string name="Search_destiny">Busque o seu destino</string>
+    <string name="Past_Trips">Viagens Anteriores</string>
+    <string name="desc_rio">Río de Janeiro es una gran ciudad brasileña junto al mar, famosa por las playas de Copacabana e Ipanema y la estatua del Cristo Redentor de 38 metros de altura.</string>
+
+
 </resources>

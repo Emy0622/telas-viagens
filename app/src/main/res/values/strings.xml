@@ -12,7 +12,16 @@
     <string name="phone">Phone</string>
     <string name="over">over 18?</string>
     <string name="create_acc">Create account</string>
-    <string name="user">Username</string>
+    <string name="profile_picture">profile picture</string>
+    <string name="search">search</string>
+    <string name="you_paris">You\'re in Paris</string>
+    <string name="my_trips">My Trips</string>
+    <string name="Categories">Categories</string>
+    <string name="Montain">Montain</string>
+    <string name="Search_destiny">Search your destiny</string>
+    <string name="Past_Trips">Past Trips</string>
+    <string name="desc_rio">Rio de Janeiro is a large Brazilian city by the sea, famous for the beaches of Copacabana and Ipanema, and the 38-meter-high statue of Christ the Redeemer.</string>
+
 
 
 </resources>
