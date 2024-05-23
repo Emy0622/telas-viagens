@@ -2,6 +2,7 @@ package br.senai.sp.jandira.telas.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -10,13 +11,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Send
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -31,6 +35,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -50,7 +55,7 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
         Surface(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(200.dp)
+                .height(220.dp)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.paris),
@@ -58,17 +63,13 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
                 contentScale = ContentScale.Crop
             )
             Column(
-                horizontalAlignment = Alignment.End,
+                horizontalAlignment = Alignment.Start,
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(8.dp)
             ) {
 
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(12.dp)
-                ) {
+
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -83,6 +84,7 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
                         )
                         {
                             Image(
+                                modifier = Modifier.clickable { controladorDeNavegacao!!.navigate("cadastrar") },
                                 painter = painterResource(id = R.drawable.icon),
                                 contentDescription = "profile picture"
                             )
@@ -96,6 +98,7 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
 
                     Column(
                         modifier = Modifier
+                            .height(100.dp)
                     ) {
                         Row {
                             Icon(
@@ -108,16 +111,18 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
                                 color = Color.White,
                                 fontSize = 14.sp,
                             )
+
                         }
-                        Text(
+                        Text(modifier = Modifier
+                            .padding(start = 10.dp),
                             text = "My Trips",
                             color = Color.White,
-                            fontSize = 30.sp,
+                            fontSize = 32.sp,
                             fontWeight = FontWeight.Bold
                         )
                     }
                 }
-            }
+
 
         }
         Row(
@@ -135,36 +140,178 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
                 .padding(start = 16.dp)
 
         ) {
-            items(10) {
+            item() {
                 Card(
-                    modifier = Modifier
-                        .width(102.dp)
-                        .height(64.dp)
-                        .padding(end = 8.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFFCF06F0)),
+                    modifier = Modifier.padding(horizontal = 8.dp),
                 ) {
                     Column(
-                        modifier = Modifier.fillMaxSize(),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
+
+                        modifier = Modifier
+                            .size(height = 80.dp, width = 100.dp)
+                            .background(color = Color(0xffCF06F0))
+                            .padding(18.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
                     ) {
                         Icon(
-                            imageVector = Icons.Default.Place,
-                            contentDescription = "Place",
+                            modifier = Modifier,
+                            imageVector = Icons.Default.Add,
+                            contentDescription = "",
                             tint = Color.White
                         )
                         Text(
-                            text = "Montain",
+                            text = stringResource(id = R.string.login),
                             color = Color.White
                         )
+                    }
+                }
+                Card(
+                    modifier = Modifier.padding(horizontal = 8.dp),
+                ) {
+                    Column(
+
+                        modifier = Modifier
+                            .size(height = 80.dp, width = 100.dp)
+                            .background(color = Color(0xffCF06F0))
+                            .padding(18.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Icon(
+                            modifier = Modifier,
+                            imageVector = Icons.Default.Add,
+                            contentDescription = "",
+                            tint = Color.White
+                        )
                         Text(
-                            text = "Montain",
+                            text = stringResource(id = R.string.login),
+                            color = Color.White
+                        )
+                    }
+                }
+                Card(
+                    modifier = Modifier.padding(horizontal = 8.dp),
+                ) {
+                    Column(
+
+                        modifier = Modifier
+                            .size(height = 80.dp, width = 100.dp)
+                            .background(color = Color(0xffCF06F0))
+                            .padding(18.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Icon(
+                            modifier = Modifier,
+                            imageVector = Icons.Default.Add,
+                            contentDescription = "",
+                            tint = Color.White
+                        )
+                        Text(
+                            text = stringResource(id = R.string.login),
+                            color = Color.White
+                        )
+                    }
+                }
+                Card(
+                    modifier = Modifier.padding(horizontal = 8.dp),
+                ) {
+                    Column(
+
+                        modifier = Modifier
+                            .size(height = 80.dp, width = 100.dp)
+                            .background(color = Color(0xffCF06F0))
+                            .padding(18.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Icon(
+                            modifier = Modifier,
+                            imageVector = Icons.Default.Add,
+                            contentDescription = "",
+                            tint = Color.White
+                        )
+                        Text(
+                            text = stringResource(id = R.string.login),
+                            color = Color.White
+                        )
+                    }
+                }
+                Card(
+                    modifier = Modifier.padding(horizontal = 8.dp),
+                ) {
+                    Column(
+
+                        modifier = Modifier
+                            .size(height = 80.dp, width = 100.dp)
+                            .background(color = Color(0xffCF06F0))
+                            .padding(18.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Icon(
+                            modifier = Modifier,
+                            imageVector = Icons.Default.Add,
+                            contentDescription = "",
+                            tint = Color.White
+                        )
+                        Text(
+                            text = stringResource(id = R.string.login),
+                            color = Color.White
+                        )
+                    }
+                }
+                Card(
+                    modifier = Modifier.padding(horizontal = 8.dp),
+                ) {
+                    Column(
+
+                        modifier = Modifier
+                            .size(height = 80.dp, width = 100.dp)
+                            .background(color = Color(0xffCF06F0))
+                            .padding(18.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Icon(
+                            modifier = Modifier,
+                            imageVector = Icons.Default.Add,
+                            contentDescription = "",
+                            tint = Color.White
+                        )
+                        Text(
+                            text = stringResource(id = R.string.login),
+                            color = Color.White
+                        )
+                    }
+                }
+                Card(
+                    modifier = Modifier.padding(horizontal = 8.dp),
+                ) {
+                    Column(
+
+                        modifier = Modifier
+                            .size(height = 80.dp, width = 100.dp)
+                            .background(color = Color(0xffCF06F0))
+                            .padding(18.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Icon(
+                            modifier = Modifier,
+                            imageVector = Icons.Default.Add,
+                            contentDescription = "",
+                            tint = Color.White
+                        )
+                        Text(
+                            text = stringResource(id = R.string.login),
                             color = Color.White
                         )
                     }
                 }
             }
         }
+
 
         Column(modifier = Modifier.padding(16.dp)) {
 
@@ -283,7 +430,7 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TelaHomePreview() {
-    TelaHome(controladorDeNavegacao = null)
+    TelaHome(controladorDeNavegacao = rememberNavController())
 }
 
 

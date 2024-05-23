@@ -30,11 +30,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import br.senai.sp.jandira.telas.R
 
 @Composable
 fun TelaSignup(controladorDeNavegacao: NavHostController?) {
@@ -62,7 +65,7 @@ fun TelaSignup(controladorDeNavegacao: NavHostController?) {
             color = Color(0xffCF06F0),
             fontSize = 40.sp,
             fontWeight = FontWeight.ExtraBold,
-            text = "Sign up"
+            text = stringResource(id = R.string.sing_up)
         )
 
         Text(
@@ -70,7 +73,7 @@ fun TelaSignup(controladorDeNavegacao: NavHostController?) {
                 .align(Alignment.CenterHorizontally),
             color = Color(0xffA09C9C),
             fontSize = 15.sp,
-            text = "Create a new account"
+            text = stringResource(id = R.string.create)
         )
 
         Column(
@@ -92,7 +95,7 @@ fun TelaSignup(controladorDeNavegacao: NavHostController?) {
                     .size(width = 385.dp, height = 70.dp)
                     .padding(start = 20.dp, end = 10.dp),
                 shape = RoundedCornerShape(10.dp),
-                label = { Text(text = "Username") },
+                label = { Text(text = stringResource(id = R.string.user) )},
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Filled.Person,
@@ -122,7 +125,7 @@ fun TelaSignup(controladorDeNavegacao: NavHostController?) {
                     .size(width = 385.dp, height = 70.dp)
                     .padding(start = 20.dp, end = 10.dp),
                 shape = RoundedCornerShape(10.dp),
-                label = { Text(text = "Phone") },
+                label = { Text(text = stringResource(id = R.string.phone)) },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Filled.Call,
@@ -181,7 +184,7 @@ fun TelaSignup(controladorDeNavegacao: NavHostController?) {
                     .size(width = 385.dp, height = 70.dp)
                     .padding(start = 20.dp, end = 10.dp),
                 shape = RoundedCornerShape(10.dp),
-                label = { Text(text = "Password") },
+                label = { Text(text = stringResource(id = R.string.password)) },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Filled.Lock,
@@ -218,7 +221,7 @@ fun TelaSignup(controladorDeNavegacao: NavHostController?) {
                 Text(
                     modifier = Modifier.padding(top = 32.dp, start = 17.dp),
                     fontSize = 15.sp,
-                    text = "Over 18?"
+                    text = stringResource(id = R.string.over)
                 )
             }
 
@@ -233,7 +236,7 @@ fun TelaSignup(controladorDeNavegacao: NavHostController?) {
                     modifier = Modifier.clickable { controladorDeNavegacao!!.navigate("login") },
                     fontWeight = FontWeight.ExtraBold,
                     fontSize = 16.sp,
-                    text = "CREATE ACCOUNT"
+                    text = stringResource(id = R.string.create_acc)
                 )
 
             }
@@ -283,5 +286,5 @@ fun TelaSignup(controladorDeNavegacao: NavHostController?) {
 @Preview(showSystemUi = true)
 @Composable
 fun SignUpPreview() {
-    TelaSignup(null)
+    TelaSignup(controladorDeNavegacao = rememberNavController())
 }

@@ -32,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telas.R
 import br.senai.sp.jandira.telas.ui.theme.TelasTheme
 
@@ -132,6 +133,9 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                     focusedBorderColor = Color(0xffCF06F0)
                 )
             )
+            var mensagem_erro = remember{
+                mutableStateOf("")
+        }
             Button(modifier = Modifier
                 .padding(top = 4.dp)
                 .align(Alignment.End)
@@ -141,7 +145,11 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(0xffCF06F0)
                 ),
-                onClick = { /*TODO*/ }) {
+                onClick = {if (emailState.value== "celso" && passwordState.value == "123"){
+                    mensagem_erro.value= ""
+                    controladorDeNavegacao!!.navigate("home")
+                }else{ mensagem_erro.value = "senha do usuario incorreta" }
+                }){
 
                 // text dentro do butão
                 Text(
@@ -196,6 +204,6 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
 @Composable
 fun GreetingPreview() {
     TelasTheme {
-        TelaLogin(null)
+        TelaLogin(controladorDeNavegacao = rememberNavController())
     }
 }

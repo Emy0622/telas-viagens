@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                             TelaSignup(controladorDeNavegacao)
                         }
                         composable(route= "home"){
-                            TelaHome(rememberNavController())
+                            TelaHome(controladorDeNavegacao)
                         }
                     }
                 }
