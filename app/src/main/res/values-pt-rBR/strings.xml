@@ -21,7 +21,8 @@
     <string name="Montain">Montanhas</string>
     <string name="Search_destiny">Busque o seu destino</string>
     <string name="Past_Trips">Viagens Anteriores</string>
-    <string name="desc_rio">Río de Janeiro es una gran ciudad brasileña junto al mar, famosa por las playas de Copacabana e Ipanema y la estatua del Cristo Redentor de 38 metros de altura.</string>
-
+    <string name="Locate">Local</string>
+    <string name="Beach">Praia</string>
+    <string name="Snow">Neve</string>
 
 </resources>

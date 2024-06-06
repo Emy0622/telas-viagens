@@ -34,7 +34,7 @@ class ViagemRepositorio {
             "Rio de Janeiro",
             descricao = "O Rio de Janeiro é uma grande cidade brasileira à beira-mar, famosa pelas praias de Copacabana e Ipanema, pela estátua de 38 metros de altura do Cristo Redentor, no topo do Corcovado, e pelo Pão de Açúcar, um pico de granito com teleféricos até seu cume. ",
             dataChegada = LocalDate.of(2019, 2, 1),
-            dataPartida =   LocalDate.of(2019, 2, 29),
+            dataPartida =   LocalDate.of(2019, 2, 22),
             imagem = painterResource(id = R.drawable.rio)
         )
 

@@ -21,6 +21,10 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.BeachAccess
+import androidx.compose.material.icons.filled.DownhillSkiing
+import androidx.compose.material.icons.filled.Landscape
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Send
@@ -164,12 +168,12 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
                     ) {
                         Icon(
                             modifier = Modifier,
-                            imageVector = Icons.Default.Add,
+                            imageVector = Icons.Default.Landscape,
                             contentDescription = "",
                             tint = Color.White
                         )
                         Text(
-                            text = stringResource(id = R.string.login),
+                            text = stringResource(id = R.string.Montain),
                             color = Color.White
                         )
                     }
@@ -188,12 +192,12 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
                     ) {
                         Icon(
                             modifier = Modifier,
-                            imageVector = Icons.Default.Add,
+                            imageVector = Icons.Default.DownhillSkiing,
                             contentDescription = "",
                             tint = Color.White
                         )
                         Text(
-                            text = stringResource(id = R.string.login),
+                            text = stringResource(id = R.string.Snow),
                             color = Color.White
                         )
                     }
@@ -212,12 +216,12 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
                     ) {
                         Icon(
                             modifier = Modifier,
-                            imageVector = Icons.Default.Add,
+                            imageVector = Icons.Default.BeachAccess,
                             contentDescription = "",
                             tint = Color.White
                         )
                         Text(
-                            text = stringResource(id = R.string.login),
+                            text = stringResource(id = R.string.Beach),
                             color = Color.White
                         )
                     }
@@ -236,88 +240,17 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
                     ) {
                         Icon(
                             modifier = Modifier,
-                            imageVector = Icons.Default.Add,
+                            imageVector = Icons.Default.Place,
                             contentDescription = "",
                             tint = Color.White
                         )
                         Text(
-                            text = stringResource(id = R.string.login),
+                            text = stringResource(id = R.string.Locate),
                             color = Color.White
                         )
                     }
                 }
-                Card(
-                    modifier = Modifier.padding(horizontal = 8.dp),
-                ) {
-                    Column(
 
-                        modifier = Modifier
-                            .size(height = 80.dp, width = 100.dp)
-                            .background(color = Color(0xffCF06F0))
-                            .padding(18.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
-                    ) {
-                        Icon(
-                            modifier = Modifier,
-                            imageVector = Icons.Default.Add,
-                            contentDescription = "",
-                            tint = Color.White
-                        )
-                        Text(
-                            text = stringResource(id = R.string.login),
-                            color = Color.White
-                        )
-                    }
-                }
-                Card(
-                    modifier = Modifier.padding(horizontal = 8.dp),
-                ) {
-                    Column(
-
-                        modifier = Modifier
-                            .size(height = 80.dp, width = 100.dp)
-                            .background(color = Color(0xffCF06F0))
-                            .padding(18.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
-                    ) {
-                        Icon(
-                            modifier = Modifier,
-                            imageVector = Icons.Default.Add,
-                            contentDescription = "",
-                            tint = Color.White
-                        )
-                        Text(
-                            text = stringResource(id = R.string.login),
-                            color = Color.White
-                        )
-                    }
-                }
-                Card(
-                    modifier = Modifier.padding(horizontal = 8.dp),
-                ) {
-                    Column(
-
-                        modifier = Modifier
-                            .size(height = 80.dp, width = 100.dp)
-                            .background(color = Color(0xffCF06F0))
-                            .padding(18.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
-                    ) {
-                        Icon(
-                            modifier = Modifier,
-                            imageVector = Icons.Default.Add,
-                            contentDescription = "",
-                            tint = Color.White
-                        )
-                        Text(
-                            text = stringResource(id = R.string.login),
-                            color = Color.White
-                        )
-                    }
-                }
             }
         }
 
