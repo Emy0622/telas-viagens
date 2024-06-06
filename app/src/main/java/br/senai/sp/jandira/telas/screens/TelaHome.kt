@@ -1,5 +1,7 @@
 package br.senai.sp.jandira.telas.screens
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -15,6 +17,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -37,15 +40,21 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import br.senai.sp.jandira.telas.R
+import br.senai.sp.jandira.telas.Repositorio.ViagemRepositorio
+import br.senai.sp.jandira.telas.ultilitarios.encurtaDatas
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun TelaHome(controladorDeNavegacao: NavHostController?) {
+    val viagens = ViagemRepositorio().listarTodasAsViagens()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -361,71 +370,76 @@ fun TelaHome(controladorDeNavegacao: NavHostController?) {
             Spacer(modifier = Modifier.height(14.dp))
 
             LazyColumn() {
-
-                items(4) {
+                items(viagens) {
                     Card(
-                        elevation = CardDefaults.cardElevation(
-                            defaultElevation = 6.dp
-                        ),
-                        colors = CardDefaults.cardColors(
-                            containerColor = Color.White
-                        )
-
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            //.height(250.dp)
+                            .padding(horizontal = 20.dp)
+                            .padding(top = 10.dp),
+                        elevation = CardDefaults.cardElevation(6.dp)
                     ) {
                         Column(
                             modifier = Modifier
-                                .padding(12.dp)
+                                .background(color = Color.White)
+                                .fillMaxSize(),
                         ) {
-
                             Surface(
                                 modifier = Modifier
+                                    .height(140.dp)
                                     .fillMaxWidth()
-                                    .height(120.dp),
-                                shape = RoundedCornerShape(6.dp)
-                            )
-                            {
+                                    .padding(4.dp),
+                                RoundedCornerShape(6.dp)
+                            ) {
                                 Image(
-                                    painter = painterResource(id = R.drawable.rio),
+                                    modifier = Modifier,
+                                    painter = if (it.imagem == null) painterResource(id = R.drawable.canada) else it.imagem!!,
                                     contentDescription = "",
-                                    contentScale = ContentScale.Crop
-
+                                    contentScale = ContentScale.Crop,
                                 )
                             }
 
-                            Spacer(modifier = Modifier.height(12.dp))
                             Text(
-                                text = "Rio de Janeiro, 2019",
-                                color = Color(0xFFCF06F0),
-                                fontSize = 18.sp
+                                modifier = Modifier
+                                    .padding(horizontal = 10.dp, vertical = 2.dp),
+                                color = Color(0xffCF06F0),
+                                fontSize = 16.sp,
+                                text = "${it.destino}, ${it.dataChegada.year}"
                             )
-                            Spacer(modifier = Modifier.height(6.dp))
                             Text(
-                                text = "O Rio de Janeiro é uma grande cidade brasileira à beira-mar, famosa pelas praias de Copacabana e Ipanema, pela estátua de 38 metros de altura do Cristo Redentor.",
-                                color = Color(0xFF7A7A7A),
-                                fontSize = 11.sp,
-                                lineHeight = 15.sp
+                                modifier = Modifier
+                                    .padding(horizontal = 10.dp, vertical = 6.dp),
+                                color = Color(0xffA09C9C),
+                                fontSize = 12.sp,
+                                text = it.descricao
                             )
 
                             Row(
-                                horizontalArrangement = Arrangement.End,
-                                modifier = Modifier.fillMaxWidth()
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(end = 12.dp),
+                                horizontalArrangement = Arrangement.End
                             ) {
                                 Text(
-                                    text = "18 Feb - 21 Feb",
-                                    color = Color(0xFFCF06F0),
-                                    fontSize = 14.sp
+                                    modifier = Modifier
+                                        .padding(vertical = 6.dp),
+                                    color = Color(0xffCF06F0),
+                                    fontSize = 14.sp,
+                                    text = encurtaDatas(it.dataChegada, it.dataPartida),
+                                    textAlign = TextAlign.Right
                                 )
                             }
+
                         }
                     }
-                    Spacer(modifier = Modifier.height(15.dp))
+
                 }
             }
+
         }
     }
 
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

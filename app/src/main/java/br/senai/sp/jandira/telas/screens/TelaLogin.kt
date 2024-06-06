@@ -151,7 +151,7 @@ fun TelaLogin(controladorDeNavegacao: NavHostController?) {
                 }else{ mensagem_erro.value = "senha do usuario incorreta" }
                 }){
 
-                // text dentro do butão
+                // text dentro do botão
                 Text(
                     modifier = Modifier
                         .padding(end = 8.dp),
